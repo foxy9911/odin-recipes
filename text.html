@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--Cand folosim CSS putem sa specificam doar primul cuvant
+Dar putem adauga si ultimul cuvant cu "."
+-->
+    <style>
+        .subsection{
+            color: aqua;
+        }
+
+
+        .subsection.preview{
+            background-color: red;
+        }
+
+        #description{
+            color: orange;
+        }
+
+        .subsection#description{
+            font-style: italic;
+        }
+
+        .ancestor .child{
+            color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+
+<!--Avem doua clase care incep cu acelasi cuvant:"subsection" -->
+<div>
+    <div class="subsection header">Latest Posts</div>
+    <p class="subsection preview">This is where a preview for a post might go.</p>
+    <p class="subsection" id="description">This is a description</p>
+</div>
+
+<!--Aici testam descendant combinator-->
+<div class="ancestor">
+    <div class="child">A</div>
+    <div class="child">B</div>
+    <div class="child">C</div>
+</div>
+
+<!--Observam in output ca Z nu are stil deoarece nu are parentul "ancestor" cum am declarat in <style>-->
+<div class="child">Z</div>
+
+
+</body>
+</html>
